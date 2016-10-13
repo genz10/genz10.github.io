@@ -9,7 +9,6 @@ var interval = 10;
 var numberAttempt = 0;
 var dir = ['up','down','left','right'];
 var learnRate = 0.5 
-
 //END Variable//
 
 
@@ -173,15 +172,7 @@ function debugQ(){
 
 var ok = false;
 function start(){
-	numberAttempt++;
-	if(numberAttempt){
-		$('#result').append('Number Attempt : ' + numberAttempt + 'Steps : ' + counter +'<br/>');
-		// console.log("Steps : " + counter);
-		counter = 0;
-	}
-	
 	initiate();
-	// debugQ();
 	if(idInterval){
 		clearInterval(idInterval);
 	}
