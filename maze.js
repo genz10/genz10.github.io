@@ -153,7 +153,7 @@ function randomMove(e){
 		var reward = -0.04;
 		nowQ[dr] = nowQ[dr] + reward;
 	}
-	debugQ();
+	// debugQ();
 }
 
 
