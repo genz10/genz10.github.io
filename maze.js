@@ -9,6 +9,7 @@ var interval = 10;
 var numberAttempt = 0;
 var dir = ['up','down','left','right'];
 var learnRate = 0.5 
+
 //END Variable//
 
 
@@ -19,15 +20,18 @@ var epsilon = 0.05;
 //Obstacle Array
 var obstacle = [];
 //DEFINE Pit Coordinate
-var pit = [3,4];
+var pit = [0,5];
 //Define Tile Start
 var tileStart 	= [0,0];
 //Define Tile Goal
-var tileEnd 	= [4,4];
+var tileEnd 	= [4,6];
 
 //MAP SIZE
-var MAP_X = 6;
-var MAP_Y = 6;
+var MAP_X = 7;
+var MAP_Y = 7;
+
+//set debugMode to True for displaying Q Value[might reduce performance]
+var debugMode = false;
 
 
 function defineState(){
@@ -152,7 +156,7 @@ function randomMove(e){
 		var reward = -0.04;
 		nowQ[dr] = nowQ[dr] + reward;
 	}
-	// debugQ();
+	if(debugMode) debugQ();
 }
 
 
@@ -171,11 +175,12 @@ function debugQ(){
 }
 
 var ok = false;
+
+function stop(){
+	clearInterval(idInterval);
+}
 function start(){
 	initiate();
-	if(idInterval){
-		clearInterval(idInterval);
-	}
 	idInterval = setInterval(randomMove,interval);
 }
 function createTable(){
@@ -191,6 +196,7 @@ function createTable(){
 $(document).ready(function(){
 	createTable();
 	defineState();
+	initiate();
 	$('td').click(function(){
 		var x = $(this).attr("x");
 		var y = $(this).attr("y");

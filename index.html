@@ -1,17 +1,24 @@
 <html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script type="text/javascript" src="maze.js"></script>
+<link rel="stylesheet" type='text/css' href="main.css">
+</head>
+<body>
+<center>
+Before pressing start button, left click on the white tile to set those tile as "Road Block".<br/>
+Basically it will try to find the shortest path to the "Target" tile. <br/>
+Red colored tile is a pit that we trying to avoid.<br/>
+</center>
+<table id="table">
 
-	<head>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-		<script type="text/javascript" src="maze.js"></script>
-		<link rel="stylesheet" type='text/css' href="main.css">
-	</head>
-	<body>
-		<table id="table"></table>
-		<div id='result'></div>
-		<center>
-			<button onClick="start()">Start</button>
-		</center>
 
-	</body>
 
+</table>
+<div id='result'>
+
+</div>
+<center><button onClick="start()">Start</button><button onClick="stop()">Stop</button></center>
+
+</body>
 </html>
